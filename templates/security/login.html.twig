@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InaWay{% endblock %}
+
+{% block body %}
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <div class="mdk-header-layout__content page-content pb-0">
+            <div class="bg-gradient-primary py-32pt">
+                <div class="container d-flex flex-column flex-md-row align-items-center text-center text-md-left">
+                    <img src="assets/images/illustration/student/128/white.svg" class="mr-md-32pt mb-32pt mb-md-0"
+                         alt="student">
+                    <div class="flex mb-32pt mb-md-0">
+                        <h1 class="text-white mb-0">Conexion</h1>
+                        <p class="lead measure-lead text-white-50">Gestion du compte</p>
+                    </div>
+                    <a href="/inscription" class="btn btn-outline-white flex-column">
+                        Vous n'avez pas encore de compte?
+                        <span class="btn__secondary-text">Inscrivez-vous maintenant!</span>
+                    </a>
+                </div>
+            </div>
+            <div class="bg-white pt-32pt pt-sm-64pt pb-32pt">
+                <div class="container page__container">
+                    <form action="{{ path('connexion') }}" method="post" class="col-md-5 p-0 mx-auto">
+                        {% if error %}
+
+                            <div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'login') }}</div>
+                        {% endif %}
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input name="_username" type="text" class="form-control"
+                                   placeholder="Votre adresse email ...">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe:</label>
+                            <input name="_password" type="password" class="form-control"
+                                   placeholder="Votre mot de passe ...">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-lg btn-accent">Connexion</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- // END Header Layout -->
+{% endblock %}

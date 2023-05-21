@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Forum | InaWay{% endblock %}
+
+{% block body %}
+
+
+    <div class="mdk-header-layout js-mdk-header-layout">
+        <div class="mdk-header-layout__content page-content ">
+            <div class="container page__container">
+                <div class="page-section">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="h2 mb-2">{{ sujet.TITRE }}</h1>
+                            <p class="text-muted d-flex align-items-center mb-32pt mb-lg-48pt">
+                                <a href="/forum" class="mr-3">Retour</a>
+                            </p>
+                            <div class="card card-body">
+                                <div class="d-flex">
+                                    <a href="#" class="avatar mr-3">
+                                        <img src="{{ asset('assets/images/people/'~sujet.idUser.avatar) }}" alt="people"
+                                             class="avatar-img rounded-circle">
+                                    </a>
+                                    <div class="flex">
+                                        <p class="d-flex align-items-center mb-2">
+                                            <a href="#" class="text-body mr-2"><strong>{{ sujet.idUser }}</strong></a>
+                                            <small class="text-muted">{{ sujet.DATE|date('d/m/Y') }}</small>
+                                        </p>
+                                        <p>{{ sujet.contenu }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form methode="post" action="/forum_answer/ajouter/{{ sujet.idQuestion }}">
+
+                                <div class="d-flex mb-4">
+                                    <a href="#" class="avatar mr-3">
+                                        <img src="{{ asset('assets/images/people/')~ user.avatar }}" alt="people"
+                                             class="avatar-img rounded-circle">
+                                    </a>
+                                    <div class="flex">
+                                        <input type="hidden" name="question" value="{{ sujet.idQuestion }}"/>
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="comment" id="comment" rows="3"
+                                                      placeholder="Répondre ..."></textarea>
+                                        </div>
+                                        <button class="btn btn-accent">Envoyer</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            <div class="pt-3">
+
+                                <h4>{{ nbrCommentaire }} Commentaires</h4>
+
+                                {% for c in commentaire %}
+                                    <div class="ml-sm-32pt mt-3 card p-3">
+                                        <div class="d-flex">
+                                            <a href="#" class="avatar avatar-xs mr-3">
+                                                <img src="{{ asset('assets/images/people/'~c.idUser.avatar) }}"
+                                                     alt="Guy" class="avatar-img rounded-circle">
+                                            </a>
+                                            <div class="flex">
+                                                <div class="d-flex align-items-center">
+                                                    <a href="#" class="text-body"><strong>{{ c.idUser }}</strong></a>
+                                                </div>
+                                                <p class="mt-1 mb-0 text-black-70">{{ c.contenu }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,389 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bonjour {{app.user.prenom}} {% endblock %}
+{% block js_page %}
+    <script>
+
+        function showModal(id) {
+            model = "#update" + id;
+            //$('#update .score').html(id);
+            $(model).modal('show')
+
+        }
+
+        function getUtilisateur(index) {
+            var id = index - 1;
+            //alert(id);
+            showModal(id);
+        }
+
+        $(document).ready(function () {
+            $("input[type=checkbox]").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "",
+                    data: {
+                        value: $(this).prop("checked") ? 1 : 0
+                    },
+                    success: function (data) {
+                        $('#echo2').html(data);
+                    }
+                });
+            });
+
+
+        });
+    </script>
+{% endblock %}
+{% block body %}
+
+    {% for u in user %}
+        <div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-labelledby="update" aria-hidden="true"
+             id="update{{ loop.index-1 }}">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="admin/modifierconseiller/{{ u.idUser }}" method="post" enctype="multipart/form-data">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modifier le conseiller</h5>
+                            <button type="button" class="close" data-dismiss="modal"><span
+                                        aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label for="prenom">Prénom:</label>
+                                        <input name="prenom" type="text" class="form-control" value="{{ u.prenom }}">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="nom">Nom:</label>
+                                        <input name="nom" type="text" class="form-control" value="{{ u.nom }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label for="cne">PPR:</label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="cne">CIN:</label>
+                                        <input name="cin" type="text" class="form-control" value="{{ u.cin }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label for="email">Email:</label>
+                                        <input name="email" type="email" class="form-control"
+                                               value="{{ u.email }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <br><label for="password">Mot de passe:</label>
+                                        <input name="password" type="password" class="form-control"
+                                               value="{{ u.password }}">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <br><label for="password">Confirmer le Mot de passe:</label>
+                                        <input name="confirm_password" type="password" class="form-control"
+                                               value="{{ u.password }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <br><label for="nom">Avatar:</label><br>
+                                        <input type="file" name="avatar" accept="image/png, image/jpeg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label for="nom">Académie:</label><br>
+                                        <select name="acadimie" class="form-control custom-select w-auto">
+                                            {% for a in acadimie %}
+                                                <option value="{{ a.idAcadimie }}">{{ a.Nom }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <br><label for="nom">Direction:</label><br>
+                                        <select name="direction" class="form-control custom-select w-auto">
+                                            {% for d in direction %}
+                                                <option value="{{ d.idDirection }}">{{ d.Nom }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-lg btn-accent">Modifier</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <!-- Header Layout Content -->
+        <div class="mdk-header-layout__content page-content ">
+            <div class="bg-gradient-primary border-bottom-white py-32pt">
+                <div class="container d-flex flex-column flex-md-row align-items-center text-center text-md-left">
+                    <img src="{{ asset('assets/images/illustration/teacher/128/white.svg') }}" width="104"
+                         class="mr-md-32pt mb-32pt mb-md-0" alt="student">
+                    <div class="flex mb-32pt mb-md-0">
+                        <h2 class="text-white mb-0" id="text"></h2>
+                        <script type="text/javascript">
+                            var i = 0, text;
+                            text = "Bienvenue {{ app.user }}";
+
+                            function typing() {
+                                if (i < text.length) {
+                                    document.getElementById("text").innerHTML += text.charAt(i);
+                                    i++;
+                                    setTimeout(typing, 80);
+                                }
+                            }
+
+                            typing();
+                        </script>
+                        <p class="lead text-white-50 d-flex align-items-center">Administrateur</p>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-expand-sm navbar-dark-white bg-gradient-primary p-sm-0 ">
+                <div class="container page__container">
+                    <!-- Navbar toggler -->
+                    <button class="navbar-toggler ml-n16pt" type="button" data-toggle="collapse"
+                            data-target="#navbar-submenu2">
+                        <span class="material-icons">people_outline</span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar-submenu2">
+                        <div class="navbar-collapse__content pb-16pt pb-sm-0">
+                            <ul class="nav navbar-nav">
+
+                                <li class="nav-item active">
+                                    <a href="/eleve" class="nav-link">Espace Administrateur</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Debut-->
+            <div class="container page__container page-section">
+
+                <div class="page-headline text-center">
+                    <h2>Gestion des conseillers</h2>
+                </div>
+                <div class="col-xl-12 col-lg-24">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                    <span class="pull-right" style="float:right; margin-top:30px;margin-left:850px;">
+                    <button class="btn btn-primary btn-sm" data-toggle="modal"
+                            data-target="#singup"><i class="fa fa-plus"
+                                                     aria-hidden="true"></i> Ajouter un conseiller</button></span>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-body">
+
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover display">
+                                                <thead>
+                                                <tr>
+                                                    <th style="padding:13px;">Prénom</th>
+                                                    <th style="padding:13px;">Nom</th>
+                                                    <th style="padding:13px;">Email</th>
+                                                    <th style="padding:13px;">CIN</th>
+                                                    <th style="padding:13px;">Actions</th>
+                                                </tr>
+                                                </thead>
+                                                {% for u in user %}
+                                                    <tr>
+                                                        <td style="padding:13px;">{{ u.prenom }}</td>
+                                                        <td style="padding:13px;">{{ u.nom }}</td>
+                                                        <td style="padding:13px;">{{ u.email }}</td>
+                                                        <td style="padding:13px;">{{ u.cin }}</td>
+                                                        <td style="padding:13px; text-align:center;">
+                                                            <a role="button" id="modifier" data-toggle="modal"
+                                                               data-target="" onclick="getUtilisateur({{ loop.index }})"
+                                                               value="{{ loop.index }}"><i
+                                                                        class="fas fa-edit text-green fa-2x"
+                                                                        style="font-size: 20px; "></i></a>
+                                                            <a role="button" id="supprimer"
+                                                               href="/admin/supprimerconseiller/{{ u.idUser }}"><i
+                                                                        class="fas fa-trash text-red fa-2x"
+                                                                        style="font-size: 20px;"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container page__container page-section">
+
+                <div class="page-headline text-center">
+                    <h2>Gestion des publications</h2>
+                </div>
+                <div class="card card-body mb-32pt">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover display">
+                                <thead>
+                                <tr>
+                                    <th style="width:600px;">Publication</th>
+                                    <th style="width:200px;">Titre</th>
+                                    <th style="width:90px;">Conseiller</th>
+                                    <th style="padding:13px;">Approuver</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for p in pub %}
+                                    <tr>
+                                        <td style="width:600px;">
+                                            <p class="text-70">{{ p.contenu }}</p>
+                                        </td>
+                                        <td style="width:200px;">
+                                            <p class="text-70">{{ p.titre }}</p>
+                                        </td>
+                                        <td style="width:90px;">
+                                            <p class="text-70">{{ p.idConseiller }}</p>
+                                        </td>
+                                        <td style="padding:13px;">
+                                            <div class="col-lg-12 d-flex align-items-center">
+                                                <div class="flex">
+                                                    <a role="button"
+                                                       href="/admin/accepterpublication/article/{{ p.idArticle }}"><i
+                                                                class="fas fa-check text-green fa-2x"
+                                                                style="color:green;font-size: 20px; margin-left:18px;"></i></a>
+                                                    <a role="button"
+                                                       href="/admin/refuserpublication/article/{{ p.idArticle }}"><i
+                                                                class="fas fa-times text-red fa-2x"
+                                                                style="color:red; font-size: 20px;margin-left:30px;"></i></a>
+
+                                                    <!--<label class="form-label mb-0" for="approuver">Oui</label>-->
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                {% for p1 in pub1 %}
+                                    <tr>
+                                        <td style="padding:13px;">
+                                            <p class="text-70">{{ p1.discription }}</p>
+                                        </td>
+                                        <td style="padding:13px;">
+                                            <p class="text-70">{{ p1.nom }}</p>
+                                        </td>
+                                        <td style="padding:13px;">
+                                            <p class="text-70">{{ p1.idConseiller }}</p>
+                                        </td>
+                                        <td style="padding:13px;">
+                                            <div class="col-lg-12 d-flex align-items-center">
+                                                <div class="flex">
+                                                    <a role="button" href="/admin/accepterpublication/es/{{ p1.idEs }}"><i
+                                                                class="fas fa-check text-green fa-2x"
+                                                                style="color:green;font-size: 20px;margin-left:18px;"></i></a>
+                                                    <a role="button"
+                                                       href="/admin/refuserpublication/es/{{ p1.idEs }}"><i
+                                                                class="fas fa-times text-red fa-2x"
+                                                                style="color:red; font-size: 20px; margin-left:30px;"></i></a>
+                                                    <!--<label class="form-label mb-0" for="approuver1">Oui</label>-->
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                {% for p2 in pub2 %}
+                                    <tr>
+                                        <td style="padding:13px;">
+                                            <p class="text-70">{{ p2.discription }}</p>
+                                        </td>
+                                        <td style="padding:13px;">
+                                            <p class="text-70">{{ p2.titre }}</p>
+                                        </td>
+                                        <td style="padding:13px;">
+                                            <p class="text-70">{{ p2.idConseiller }}</p>
+                                        </td>
+                                        <td style="padding:13px;">
+                                            <div class="col-lg-12 d-flex align-items-center">
+                                                <div class="flex">
+                                                    <a role="button"
+                                                       href="/admin/accepterpublication/concours/{{ p2.idConcours }}"><i
+                                                                class="fas fa-check text-green fa-2x"
+                                                                style="color:green;font-size: 20px; margin-left:18px;"></i></a>
+                                                    <a role="button"
+                                                       href="/admin/refuserpublication/concours/{{ p2.idConcours }}"><i
+                                                                class="fas fa-times text-red fa-2x"
+                                                                style="color:red; font-size: 20px; margin-left:30px;"></i></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                {% for p3 in pub3 %}
+                                    <tr>
+                                        <td style="padding:13px;">
+                                            <p class="text-70">{{ p3.discription }}</p>
+                                        </td>
+                                        <td style="padding:13px;">
+                                            <p class="text-70">{{ p3.nom }}</p>
+                                        </td>
+                                        <td style="padding:13px;">
+                                            <p class="text-70">{{ p3.idConseiller }}</p>
+                                        </td>
+                                        <td style="padding:13px;">
+                                            <div class="col-lg-12 d-flex align-items-center">
+                                                <div class="flex">
+                                                    <a role="button"
+                                                       href="/admin/accepterpublication/evenement/{{ p3.idEvenement }}"><i
+                                                                class="fas fa-check text-green fa-2x"
+                                                                style="color:green;font-size: 20px; margin-left:18px;"></i></a>
+                                                    <a role="button"
+                                                       href="/admin/refuserpublication/evenement/{{ p3.idEvenement }}"><i
+                                                                class="fas fa-times text-red fa-2x"
+                                                                style="color:red; font-size: 20px; margin-left:30px;"></i></a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Fin-->
+
+        </div>
+    </div>
+    <!-- // END Header Layout -->
+
+{% endblock %}

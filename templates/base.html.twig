@@ -1,0 +1,199 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <title> {% block title %}Page d’accueil!{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="InaWay site d'orientation scolaire">
+    <meta name="author" content="Ahmed & Ayoub">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="{{ asset('assets/vendor/perfect-scrollbar.css') }}" rel="stylesheet">
+
+    <!-- Fix ChatBot CSS -->
+    <link type="text/css" href="{{ asset('assets/css/chatbot-style.css') }}" rel="stylesheet">
+
+    <!-- Fix Footer CSS -->
+    <link type="text/css" href="{{ asset('assets/vendor/fix-footer.css') }}" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="{{ asset('assets/css/material-icons.css') }}" rel="stylesheet">
+
+    <!-- Font Awesome Icons
+    /*
+    <link type="text/css" href="{{ asset('assets/css/fontawesome.css') }}" rel="stylesheet">-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/fontawesome.min.js"/>
+    <!-- Preloader -->
+    <link type="text/css" href="{{ asset('assets/css/preloader.css') }}" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <!--<link href="asset/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/chatbot.js') }}"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.ico') }}">
+    {% block js_page %}
+
+    {% endblock %}
+
+</head>
+<body>
+{% block preloader %}
+    <div class="preloader">
+        <div class="sk-double-bounce">
+            <div class="sk-child sk-double-bounce1"></div>
+            <div class="sk-child sk-double-bounce2"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+{% block header %}
+    {{ render(path('app_header')) }}
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+
+{% block footer %}
+
+    <div class="bg-white js-fix-footer border-top-2">
+        <div class="container page-section py-lg-48pt">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-6 col-md-4 mb-24pt mb-md-0">
+                            <h4 class="text-black-70">Raccourcis</h4>
+                            <nav class="nav nav-links nav--flush flex-column">
+                                <a class="nav-link" href="/lycee">Lycée</a>
+                                <a class="nav-link" href="/etudes_superieures">Etudes supérieures</a>
+                                <a class="nav-link" href="/concours">Concours</a>
+                                <a class="nav-link" href="/evenements">Evénements</a>
+                            </nav>
+                        </div>
+
+                        {% if not app.user %}
+                            <div class="col-6 col-md-4 mb-24pt mb-md-0">
+                                <h4 class="text-black-70">Rejoignez nous</h4>
+                                <nav class="nav nav-links nav--flush flex-column">
+                                    <a class="nav-link" href="/connexion">Connexion</a>
+                                    <a class="nav-link" href="/inscription">Inscription</a>
+                                </nav>
+                            </div>
+                            <div class="col-6 col-md-4 mb-32pt mb-md-0">
+                                <h4 class="text-black-70">Forum</h4>
+                                <nav class="nav nav-links nav--flush flex-column">
+                                    <p class="text-muted">
+                                        Avez-vous des question ?
+                                        voulez-vous disscuter avec les conseillers et d'autres amis ?
+                                        Rejoignez-nous vite.
+                                    </p>
+                                </nav>
+                            </div>
+                        {% else %}
+                            <div class="col-6 col-md-4 mb-24pt mb-md-0">
+                                <h4 class="text-black-70">Bienvenu chez inaway</h4>
+                                {% if is_granted('ROLE_CONSEILLER') %}
+                                    <nav class="nav nav-links nav--flush flex-column">
+                                        <a class="nav-link" href="{{ path('profil') }}">Profile</a>
+                                    </nav>
+                                {% else %}
+                                    <nav class="nav nav-links nav--flush flex-column">
+                                        <a class="nav-link" href="{{ path('profile') }}">Profile</a>
+                                    </nav>
+                                {% endif %}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <nav class="nav nav-links nav--flush flex-column">
+                                        <a class="nav-link" href="{{ path('administration') }}">Administration</a>
+                                    </nav>
+                                {% endif %}
+                                <nav class="nav nav-links nav--flush flex-column">
+                                    <a class="nav-link" href="/deconnexion">Déconnexion</a>
+                                </nav>
+                            </div>
+                            <div class="col-6 col-md-4 mb-32pt mb-md-0">
+                                <h4 class="text-black-70">Forum</h4>
+                                <nav class="nav nav-links nav--flush flex-column">
+                                    <a class="nav-link" href="/forum">Discussions</a>
+                                    <a class="nav-link" href="/forum">Poser une question</a>
+                                </nav>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-left">
+                    <p class="text-black-70 brand justify-content-md-left">
+                        <img class="brand-icon" src="{{ asset('assets/images/logo.png') }}" width="30" alt="InaWay">
+                        InaWay
+                    </p>
+                    <p class="text-muted">InaWay est un site d'orientation scolaire et professionnel qui va vous aidez
+                        pour bien s'orienter.</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-footer page-section py-lg-32pt">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-4 mb-24pt mb-md-0">
+                        <p class="text-white-70 mb-8pt"><strong>Suivez-nous</strong></p>
+                        <nav class="nav nav-links nav--flush">
+                            <a href="#" class="nav-link mr-8pt"><img
+                                        src="{{ asset('assets/images/icon/footer/facebook-square.svg') }}"
+                                        alt="Facebook"></a>
+                            <a href="#" class="nav-link mr-8pt"><img
+                                        src="{{ asset('assets/images/icon/footer/twitter-square.svg') }}" alt="Twitter"></a>
+                            <a href="#" class="nav-link mr-8pt"><img
+                                        src="{{ asset('assets/images/icon/footer/vimeo-square.svg') }}" alt="Vimeo"></a>
+                            <a href="#" class="nav-link"><img
+                                        src="{{ asset('assets/images/icon/footer/youtube-square.svg') }}" alt="YouTube"></a>
+                        </nav>
+                    </div>
+                    <div class="col-md-4 col-sm-4 mb-24pt mb-md-0 d-flex align-items-center">
+                    </div>
+                    <div class="col-md-6 text-md-right">
+                        <p class="text-white-50 mb-0">Copyright 2023 &copy;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript %}
+<!-- jQuery -->
+<script src="{{ asset('assets/vendor/jquery.min.js') }}"></script>
+            
+            <!-- Bootstrap -->
+            <script src="{{ asset('assets/vendor/popper.min.js') }}"></script>
+            <script src="{{ asset('assets/vendor/bootstrap.min.js') }}"></script>
+
+            <!-- Perfect Scrollbar -->
+            <script src="{{ asset('assets/vendor/perfect-scrollbar.min.js') }}"></script>
+
+            <!-- DOM Factory -->
+            <script src="{{ asset('assets/vendor/dom-factory.js') }}"></script>
+
+            <!-- MDK -->
+            <script src="{{ asset('assets/vendor/material-design-kit.js') }}"></script>
+
+            <!-- Fix Footer -->
+            <script src="{{ asset('assets/vendor/fix-footer.js') }}"></script>
+
+            <!-- App JS -->
+            <script src="{{ asset('assets/js/app.js') }}"></script>
+
+            <!-- Highlight.js -->
+            <script src="{{ asset('assets/js/hljs.js') }}"></script>
+        {% endblock %}
+</body>
+</html>

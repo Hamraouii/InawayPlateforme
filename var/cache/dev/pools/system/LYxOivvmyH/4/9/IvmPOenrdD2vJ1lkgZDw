@@ -1,0 +1,51 @@
+<?php //App%255CEntity%255CEtudesSuperieures
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Table'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Table')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Index'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Index')),
+        clone $p['Doctrine\\ORM\\Mapping\\Index'],
+        clone $p['Doctrine\\ORM\\Mapping\\Index'],
+        clone ($p['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone $p['Doctrine\\ORM\\Mapping\\Entity'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'etudes_superieures',
+                'ID_CONSEILLER',
+                'ID_SECTEUR',
+                'IDX_9F80D6C7AC31F306',
+            ],
+            'indexes' => [
+                [
+                    $o[1],
+                    $o[2],
+                    $o[3],
+                ],
+            ],
+            'columns' => [
+                1 => [
+                    'ID_CONSEILLER',
+                ],
+                [
+                    'ID_SECTEUR',
+                    'ID_CONSEILLER',
+                ],
+                [
+                    'ID_SECTEUR',
+                ],
+            ],
+            'repositoryClass' => [
+                5 => 'App\\Repository\\EtudesSuperieuresRepository',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[4],
+        $o[5],
+    ],
+    []
+); }];

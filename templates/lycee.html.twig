@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InaWay{% endblock %}
+
+{% block body %}
+
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <!-- Header Layout Content -->
+        <div class="mdk-header-layout__content page-content ">
+
+            <!-- Premiere Section -->
+            <div class="mdk-box mdk-box--bg-gradient-primary bg-dark js-mdk-box position-relative overflow-hidden mb-0"
+                 data-effects="parallax-background blend-background">
+                <div class="mdk-box__bg">
+                    <div class="mdk-box__bg-front" style="background-image: url(assets/images/capture.png);"></div>
+                </div>
+                <div class="mdk-box__content">
+                    <div class="container page__container py-64pt py-md-112pt">
+                        <div class="row align-items-center text-center text-md-left">
+                            <div class="col-md-6 col-lg-5 order-1 order-md-0">
+                                <h1 class="text-white">Ina <span class="text-scramble js-text-scramble">Way</span></h1>
+                                <p class="lead mb-48pt text-white">Branches, Filières, Ecoles et Universités. Découvrir
+                                    tous
+                                    cela avec InaWay.</p>
+                                <a href="#" class="btn btn-lg btn-white btn--raised mb-16pt">Voir plus</a>
+                                <p><a href="#" class="text-white-70 text-underline"><strong>Êtes-vous un conseiller en
+                                            orientation ?</strong></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // END Premiere Section -->
+
+            <!-- Tronc commun -->
+            <div class="page-section">
+                <div class="container page__container">
+                    <div class="page-headline text-center">
+                        <h2>Tronc commun</h2>
+                        <p class="lead measure-lead mx-auto text-black-70">Vous trouvez ci-dessous les informations sur
+                            les
+                            troncs communs(passrelles, coefficents,matieres...)</p>
+                    </div>
+                    <div class="text-center">
+                        <a href="{{ asset('assets/pdf/') }}info0BAC.pdf" target="_blank"
+                           class="btn btn-lg btn-white btn--raised mb-16pt">Télécharger</a>
+                    </div>
+                </div>
+            </div>
+            <!-- //END tronc commun -->
+
+            <!-- PBac -->
+            <div class="bg-white border-bottom-2 py-16pt py-sm-24pt py-md-32pt ">
+                <div class="container page__container">
+                    <div class="page-headline text-center">
+                        <h2>Première Bac</h2>
+                        <p class="lead measure-lead mx-auto text-black-70">Première année de baccalauréat ,
+                            Les élèves sont soumis à un examen régional, qui représente 25% de moyen final du bac .</p>
+                    </div>
+                    <div class="text-center">
+                        <a href="{{ asset('assets/pdf/') }}info1BAC.pdf" target="_blank"
+                           class="btn btn-lg btn-white btn--raised mb-16pt">Télécharger</a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END PBac -->
+
+            <!-- DBac -->
+            <div class="page-section">
+                <div class="container page__container">
+                    <div class="page-headline text-center">
+                        <h2>Deuxieme Bac</h2>
+                        <p class="lead measure-lead mx-auto text-black-70">C'est la dernière année de l'Enseignement
+                            Secondaire ,
+                            C'est l'année où les étudiants prennent leurs derniers examens du baccalauréat.</p>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="{{ asset('assets/pdf/') }}info2BAC.pdf" target="_blank"
+                           class="btn btn-lg btn-white btn--raised mb-16pt">Télécharger</a>
+                    </div>
+                </div>
+            </div>
+            <!-- //END DBac -->
+
+        </div>
+        <!-- // END Header Layout Content -->
+
+    </div>
+    <!-- // END Header Layout -->
+{% endblock %}

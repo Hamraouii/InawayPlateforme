@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InaWay{% endblock %}
+
+{% block body %}
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <div class="mdk-header-layout__content page-content pb-0">
+
+            <div class="py-64pt bg-gradient-primary">
+                <div class="container d-flex flex-column flex-md-row align-items-center text-center text-md-left">
+                    <img src="assets/images/illustration/student/128/white.svg" class="mr-md-32pt mb-32pt mb-md-0"
+                         alt="student">
+                    <div class="flex mb-32pt mb-md-0">
+                        <h1 class="text-white mb-8pt">Inscription</h1>
+                        <p class="lead measure-lead text-white-50">Tracer bien votre avenir avec vos nous.</p>
+                    </div>
+                    <a href="#" class="btn btn-outline-white flex-column">
+                        Questions?
+                        <span class="btn__secondary-text">Visiter notre centre d'aide</span>
+                    </a>
+                </div>
+            </div>
+            <div class="py-32pt bg-white border-bottom-2">
+                <div class="container page__container">
+                    <a href="/inscription">
+                                <span class="progression-bar__item-content">
+                                    <span class="progression-bar__item-text h5 mb-0 text-uppercase">Détailles du compte</span>
+                                </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white py-32pt py-lg-64pt">
+                <div class="container page__container">
+                    <div class="col-lg-10 p-0 mx-auto">
+                        <div class="row">
+                            <div class="col-md-12 mb-24pt mb-md-0">
+                                <form action="/inscription/ajouter" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label for="prenom">Prénom:</label>
+                                                <input name="prenom" type="text" class="form-control"
+                                                       placeholder="Votre prénom ...">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label for="nom">Nom:</label>
+                                                <input name="nom" type="text" class="form-control"
+                                                       placeholder="Votre nom ...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label for="cne">CNE:</label>
+                                                <input name="cne" type="text" class="form-control"
+                                                       placeholder="Votre CNE ...">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label for="cne">CIN:</label>
+                                                <input name="cin" type="text" class="form-control"
+                                                       placeholder="Votre CIN ...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <label for="email">Email:</label>
+                                                <input name="email" type="email" class="form-control"
+                                                       placeholder="Votre adresse email ...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <br><label for="password">Mot de passe:</label>
+                                                <input name="password" type="password" class="form-control"
+                                                       placeholder="Votre mot de passe ...">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <br><label for="confirm_password">Confirmer le Mot de passe:</label>
+                                                <input name="confirm_password" type="password" class="form-control"
+                                                       placeholder="Répeter votre mot de passe ...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label for="nom">Niveau:</label><br>
+                                                <select name="niveau" class="form-control custom-select w-auto">
+                                                    {% for n in niveau %}
+                                                        <option value="{{ n.idNiveau }}">{{ n.Nom }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label for="nom">Avatar:</label><br>
+                                                <input type="file" name="avatar" accept="image/png, image/jpeg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label for="nom">Académie:</label><br>
+                                                <select name="acadimie" class="form-control custom-select w-auto">
+                                                    {% for a in acadimie %}
+                                                        <option value="{{ a.idAcadimie }}">{{ a.Nom }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label for="nom">Direction:</label><br>
+                                                <select name="direction" class="form-control custom-select w-auto">
+                                                    {% for d in direction %}
+                                                        <option value="{{ d.idDirection }}">{{ d.Nom }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-lg btn-accent">Créer un compte</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- // END Header Layout -->
+{% endblock %}
