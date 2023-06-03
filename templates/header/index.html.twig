@@ -18,11 +18,10 @@
                 '<div class="icon">' + '<i class="fa-solid fa-robot"></i> </div>' +
                 '<div class="msg-header"><p>. . . </p> </div>' +
                 '</div>';
-            $(".form").append($writingMsg);
 
             $("#data").val('');
 
-            // the function that consume the API
+            // the function that consumes the API
             const answer = await askAssistant($value);
 
             $replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fa-solid fa-robot"></i></div><div class="msg-header"><p>' + answer + '</p></div></div>';

@@ -469,3 +469,10 @@ c36aa4,127.0.0.1,GET,https://localhost:8000/assets/images/people/,1684063172,,40
 6e1e59,127.0.0.1,GET,https://localhost:8000/conseiller/assets/images/logo.png,1684063208,,404
 53f133,127.0.0.1,GET,https://localhost:8000/assets/images/people/,1684063209,c4dc8d,404
 c4dc8d,127.0.0.1,GET,https://localhost:8000/assets/images/people/,1684063209,,404
+09c757,127.0.0.1,GET,https://localhost:8000/conseiller/profil,1685817397,,302
+e359b6,127.0.0.1,GET,https://localhost:8000/header,1685817405,f41ab7,200
+f41ab7,127.0.0.1,GET,https://localhost:8000/connexion,1685817405,,200
+67e9bf,127.0.0.1,GET,https://localhost:8000/header,1685817696,10dc96,200
+10dc96,127.0.0.1,GET,https://localhost:8000/connexion,1685817696,,200
+2d07aa,127.0.0.1,GET,https://localhost:8000/header,1685817956,86998d,200
+86998d,127.0.0.1,GET,https://localhost:8000/connexion,1685817956,,200

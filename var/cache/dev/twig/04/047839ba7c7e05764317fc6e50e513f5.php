@@ -66,11 +66,10 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                 '<div class=\"icon\">' + '<i class=\"fa-solid fa-robot\"></i> </div>' +
                 '<div class=\"msg-header\"><p>. . . </p> </div>' +
                 '</div>';
-            \$(\".form\").append(\$writingMsg);
 
             \$(\"#data\").val('');
 
-            // the function that consume the API
+            // the function that consumes the API
             const answer = await askAssistant(\$value);
 
             \$replay = '<div class=\"bot-inbox inbox\"><div class=\"icon\"><i class=\"fa-solid fa-robot\"></i></div><div class=\"msg-header\"><p>' + answer + '</p></div></div>';
@@ -100,18 +99,18 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                         <div class=\"msg-header\">
                             <p>
                                 Bienvenue ";
-        // line 54
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "user", [], "any", false, false, false, 54)) {
+        // line 53
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "user", [], "any", false, false, false, 53)) {
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "user", [], "any", false, false, false, 54), "prenom", [], "any", false, false, false, 54), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "user", [], "any", false, false, false, 53), "prenom", [], "any", false, false, false, 53), "html", null, true);
             echo "
                                 ";
         } else {
-            // line 55
+            // line 54
             echo " cher visiteur
                                 ";
         }
-        // line 57
+        // line 56
         echo "                                !
                             </p>
                         </div>
@@ -204,22 +203,22 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                                 <label for=\"nom\">Niveau:</label><br>
                                 <select name=\"niveau\" class=\"form-control custom-select w-auto\">
                                     ";
-        // line 148
+        // line 147
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["niveau"]) || array_key_exists("niveau", $context) ? $context["niveau"] : (function () { throw new RuntimeError('Variable "niveau" does not exist.', 148, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["niveau"]) || array_key_exists("niveau", $context) ? $context["niveau"] : (function () { throw new RuntimeError('Variable "niveau" does not exist.', 147, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["n"]) {
-            // line 149
+            // line 148
             echo "                                        <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["n"], "idNiveau", [], "any", false, false, false, 149), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["n"], "idNiveau", [], "any", false, false, false, 148), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["n"], "Nom", [], "any", false, false, false, 149), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["n"], "Nom", [], "any", false, false, false, 148), "html", null, true);
             echo "</option>
                                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['n'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 151
+        // line 150
         echo "                                </select>
                             </div>
                             <div class=\"col-lg-12\">
@@ -234,44 +233,44 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                                 <label for=\"nom\">Académie:</label><br>
                                 <select name=\"acadimie\" class=\"form-control custom-select w-auto\">
                                     ";
-        // line 164
+        // line 163
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["acadimie"]) || array_key_exists("acadimie", $context) ? $context["acadimie"] : (function () { throw new RuntimeError('Variable "acadimie" does not exist.', 164, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["acadimie"]) || array_key_exists("acadimie", $context) ? $context["acadimie"] : (function () { throw new RuntimeError('Variable "acadimie" does not exist.', 163, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["a"]) {
-            // line 165
+            // line 164
             echo "                                        <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "idAcadimie", [], "any", false, false, false, 165), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "idAcadimie", [], "any", false, false, false, 164), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "Nom", [], "any", false, false, false, 165), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "Nom", [], "any", false, false, false, 164), "html", null, true);
             echo "</option>
                                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['a'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 167
+        // line 166
         echo "                                </select>
                             </div>
                             <div class=\"col-lg-12\">
                                 <br><label for=\"nom\">Direction:</label><br>
                                 <select name=\"direction\" class=\"form-control custom-select w-auto\">
                                     ";
-        // line 172
+        // line 171
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["direction"]) || array_key_exists("direction", $context) ? $context["direction"] : (function () { throw new RuntimeError('Variable "direction" does not exist.', 172, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["direction"]) || array_key_exists("direction", $context) ? $context["direction"] : (function () { throw new RuntimeError('Variable "direction" does not exist.', 171, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["d"]) {
-            // line 173
+            // line 172
             echo "                                        <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["d"], "idDirection", [], "any", false, false, false, 173), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["d"], "idDirection", [], "any", false, false, false, 172), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["d"], "Nom", [], "any", false, false, false, 173), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["d"], "Nom", [], "any", false, false, false, 172), "html", null, true);
             echo "</option>
                                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['d'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 175
+        // line 174
         echo "                                </select>
                             </div>
                         </div>
@@ -295,7 +294,7 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
         <div class=\"modal-content\">
 
             <form action=\"";
-        // line 197
+        // line 196
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
         echo "\" method=\"post\" enctype=\"multipart/form-data\">
                 <div class=\"modal-header\">
@@ -363,9 +362,9 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                 </li>
 
                 ";
-        // line 262
-        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 262, $this->source); })()), "user", [], "any", false, false, false, 262)) {
-            // line 263
+        // line 261
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 261, $this->source); })()), "user", [], "any", false, false, false, 261)) {
+            // line 262
             echo "                    <li class=\"nav-item \">
                         <a href=\"#\" class=\"nav-link\" data-toggle=\"modal\" data-target=\"#singup\">Inscription</a>
                     </li>
@@ -374,15 +373,15 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                     </li>
                 ";
         } else {
-            // line 270
+            // line 269
             echo "
                     ";
-            // line 271
+            // line 270
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CONSEILLER")) {
-                // line 272
+                // line 271
                 echo "                        <li class=\"nav-item\">
                             <a href=\"";
-                // line 273
+                // line 272
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profil");
                 echo "\" class=\"nav-link\">
                                 <i class=\"fas fa-user-circle\"></i>
@@ -391,10 +390,10 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
 
                     ";
             } else {
-                // line 279
+                // line 278
                 echo "                        <li class=\"nav-item\">
                             <a href=\"";
-                // line 280
+                // line 279
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
                 echo "\" class=\"nav-link\">
                                 <i class=\"fas fa-user-circle\"></i>
@@ -403,13 +402,13 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
 
                     ";
             }
-            // line 286
+            // line 285
             echo "                    ";
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 287
+                // line 286
                 echo "                        <li class=\"nav-item\">
                             <a href=\"";
-                // line 288
+                // line 287
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("administration");
                 echo "\" class=\"nav-link\">
                                 <i class=\"fas fa-briefcase\"></i>
@@ -418,10 +417,10 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
 
                     ";
             }
-            // line 294
+            // line 293
             echo "                    <li class=\"nav-item\">
                         <a href=\"";
-            // line 295
+            // line 294
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
             echo "\" class=\"nav-link\">
                             <i class=\"fas fa-power-off\"></i>
@@ -430,7 +429,7 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
 
                 ";
         }
-        // line 301
+        // line 300
         echo "            </ul>
         </div>
     </div>
@@ -458,7 +457,7 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  434 => 301,  425 => 295,  422 => 294,  413 => 288,  410 => 287,  407 => 286,  398 => 280,  395 => 279,  386 => 273,  383 => 272,  381 => 271,  378 => 270,  369 => 263,  367 => 262,  299 => 197,  275 => 175,  264 => 173,  260 => 172,  253 => 167,  242 => 165,  238 => 164,  223 => 151,  212 => 149,  208 => 148,  115 => 57,  111 => 55,  104 => 54,  52 => 5,  47 => 3,  43 => 1,);
+        return array (  433 => 300,  424 => 294,  421 => 293,  412 => 287,  409 => 286,  406 => 285,  397 => 279,  394 => 278,  385 => 272,  382 => 271,  380 => 270,  377 => 269,  368 => 262,  366 => 261,  298 => 196,  274 => 174,  263 => 172,  259 => 171,  252 => 166,  241 => 164,  237 => 163,  222 => 150,  211 => 148,  207 => 147,  114 => 56,  110 => 54,  103 => 53,  52 => 5,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -483,11 +482,10 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                 '<div class=\"icon\">' + '<i class=\"fa-solid fa-robot\"></i> </div>' +
                 '<div class=\"msg-header\"><p>. . . </p> </div>' +
                 '</div>';
-            \$(\".form\").append(\$writingMsg);
 
             \$(\"#data\").val('');
 
-            // the function that consume the API
+            // the function that consumes the API
             const answer = await askAssistant(\$value);
 
             \$replay = '<div class=\"bot-inbox inbox\"><div class=\"icon\"><i class=\"fa-solid fa-robot\"></i></div><div class=\"msg-header\"><p>' + answer + '</p></div></div>';
