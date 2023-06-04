@@ -136,7 +136,6 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
         </div>
     </div>
 </div>
-
 <!--SingUp Modal-->
 <div class=\"modal fade custom-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"singup\" aria-hidden=\"true\"
      id=\"singup\">
@@ -203,22 +202,22 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                                 <label for=\"nom\">Niveau:</label><br>
                                 <select name=\"niveau\" class=\"form-control custom-select w-auto\">
                                     ";
-        // line 147
+        // line 146
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["niveau"]) || array_key_exists("niveau", $context) ? $context["niveau"] : (function () { throw new RuntimeError('Variable "niveau" does not exist.', 147, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["niveau"]) || array_key_exists("niveau", $context) ? $context["niveau"] : (function () { throw new RuntimeError('Variable "niveau" does not exist.', 146, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["n"]) {
-            // line 148
+            // line 147
             echo "                                        <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["n"], "idNiveau", [], "any", false, false, false, 148), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["n"], "idNiveau", [], "any", false, false, false, 147), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["n"], "Nom", [], "any", false, false, false, 148), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["n"], "Nom", [], "any", false, false, false, 147), "html", null, true);
             echo "</option>
                                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['n'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 150
+        // line 149
         echo "                                </select>
                             </div>
                             <div class=\"col-lg-12\">
@@ -233,44 +232,44 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                                 <label for=\"nom\">Académie:</label><br>
                                 <select name=\"acadimie\" class=\"form-control custom-select w-auto\">
                                     ";
-        // line 163
+        // line 162
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["acadimie"]) || array_key_exists("acadimie", $context) ? $context["acadimie"] : (function () { throw new RuntimeError('Variable "acadimie" does not exist.', 163, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["acadimie"]) || array_key_exists("acadimie", $context) ? $context["acadimie"] : (function () { throw new RuntimeError('Variable "acadimie" does not exist.', 162, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["a"]) {
-            // line 164
+            // line 163
             echo "                                        <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "idAcadimie", [], "any", false, false, false, 164), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "idAcadimie", [], "any", false, false, false, 163), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "Nom", [], "any", false, false, false, 164), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "Nom", [], "any", false, false, false, 163), "html", null, true);
             echo "</option>
                                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['a'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 166
+        // line 165
         echo "                                </select>
                             </div>
                             <div class=\"col-lg-12\">
                                 <br><label for=\"nom\">Direction:</label><br>
                                 <select name=\"direction\" class=\"form-control custom-select w-auto\">
                                     ";
-        // line 171
+        // line 170
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["direction"]) || array_key_exists("direction", $context) ? $context["direction"] : (function () { throw new RuntimeError('Variable "direction" does not exist.', 171, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["direction"]) || array_key_exists("direction", $context) ? $context["direction"] : (function () { throw new RuntimeError('Variable "direction" does not exist.', 170, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["d"]) {
-            // line 172
+            // line 171
             echo "                                        <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["d"], "idDirection", [], "any", false, false, false, 172), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["d"], "idDirection", [], "any", false, false, false, 171), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["d"], "Nom", [], "any", false, false, false, 172), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["d"], "Nom", [], "any", false, false, false, 171), "html", null, true);
             echo "</option>
                                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['d'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 174
+        // line 173
         echo "                                </select>
                             </div>
                         </div>
@@ -294,7 +293,7 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
         <div class=\"modal-content\">
 
             <form action=\"";
-        // line 196
+        // line 195
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion");
         echo "\" method=\"post\" enctype=\"multipart/form-data\">
                 <div class=\"modal-header\">
@@ -352,6 +351,23 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
             <a href=\"/\" class=\"navbar-brand\">
                 <img class=\"navbar-brand-icon mr-0 mr-md-8pt\" src=\"assets/images/logo.png\" width=\"30\" alt=\"InaWay\">
             </a>
+            <!-- AELH-->
+            <style>
+                a {
+                    color: white;
+                    margin-right: 10px;
+                    text-decoration:none;
+                }
+                a:hover{
+                    text-decoration: underline;
+                }
+            </style>
+
+            <a href=\"/evenements\">evenement | </a>
+            <a href=\"/concours\">concours | </a>
+            <a href=\"/etudes_superieures\">écoles supérieures</a>
+
+            <!-- FIN AELH -->
 
             <!-- Main Navigation -->
             <ul class=\"nav navbar-nav ml-auto d-none d-sm-flex\">
@@ -362,9 +378,9 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                 </li>
 
                 ";
-        // line 261
-        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 261, $this->source); })()), "user", [], "any", false, false, false, 261)) {
-            // line 262
+        // line 277
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 277, $this->source); })()), "user", [], "any", false, false, false, 277)) {
+            // line 278
             echo "                    <li class=\"nav-item \">
                         <a href=\"#\" class=\"nav-link\" data-toggle=\"modal\" data-target=\"#singup\">Inscription</a>
                     </li>
@@ -373,15 +389,15 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
                     </li>
                 ";
         } else {
-            // line 269
+            // line 285
             echo "
                     ";
-            // line 270
+            // line 286
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CONSEILLER")) {
-                // line 271
+                // line 287
                 echo "                        <li class=\"nav-item\">
                             <a href=\"";
-                // line 272
+                // line 288
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profil");
                 echo "\" class=\"nav-link\">
                                 <i class=\"fas fa-user-circle\"></i>
@@ -390,10 +406,10 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
 
                     ";
             } else {
-                // line 278
+                // line 294
                 echo "                        <li class=\"nav-item\">
                             <a href=\"";
-                // line 279
+                // line 295
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
                 echo "\" class=\"nav-link\">
                                 <i class=\"fas fa-user-circle\"></i>
@@ -402,13 +418,13 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
 
                     ";
             }
-            // line 285
+            // line 301
             echo "                    ";
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 286
+                // line 302
                 echo "                        <li class=\"nav-item\">
                             <a href=\"";
-                // line 287
+                // line 303
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("administration");
                 echo "\" class=\"nav-link\">
                                 <i class=\"fas fa-briefcase\"></i>
@@ -417,10 +433,10 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
 
                     ";
             }
-            // line 293
+            // line 309
             echo "                    <li class=\"nav-item\">
                         <a href=\"";
-            // line 294
+            // line 310
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
             echo "\" class=\"nav-link\">
                             <i class=\"fas fa-power-off\"></i>
@@ -429,7 +445,7 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
 
                 ";
         }
-        // line 300
+        // line 316
         echo "            </ul>
         </div>
     </div>
@@ -457,7 +473,7 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  433 => 300,  424 => 294,  421 => 293,  412 => 287,  409 => 286,  406 => 285,  397 => 279,  394 => 278,  385 => 272,  382 => 271,  380 => 270,  377 => 269,  368 => 262,  366 => 261,  298 => 196,  274 => 174,  263 => 172,  259 => 171,  252 => 166,  241 => 164,  237 => 163,  222 => 150,  211 => 148,  207 => 147,  114 => 56,  110 => 54,  103 => 53,  52 => 5,  47 => 3,  43 => 1,);
+        return array (  449 => 316,  440 => 310,  437 => 309,  428 => 303,  425 => 302,  422 => 301,  413 => 295,  410 => 294,  401 => 288,  398 => 287,  396 => 286,  393 => 285,  384 => 278,  382 => 277,  297 => 195,  273 => 173,  262 => 171,  258 => 170,  251 => 165,  240 => 163,  236 => 162,  221 => 149,  210 => 147,  206 => 146,  114 => 56,  110 => 54,  103 => 53,  52 => 5,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -542,7 +558,6 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
         </div>
     </div>
 </div>
-
 <!--SingUp Modal-->
 <div class=\"modal fade custom-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"singup\" aria-hidden=\"true\"
      id=\"singup\">
@@ -713,6 +728,23 @@ class __TwigTemplate_96718eed3bf2581c29afc257ed5f52e6 extends Template
             <a href=\"/\" class=\"navbar-brand\">
                 <img class=\"navbar-brand-icon mr-0 mr-md-8pt\" src=\"assets/images/logo.png\" width=\"30\" alt=\"InaWay\">
             </a>
+            <!-- AELH-->
+            <style>
+                a {
+                    color: white;
+                    margin-right: 10px;
+                    text-decoration:none;
+                }
+                a:hover{
+                    text-decoration: underline;
+                }
+            </style>
+
+            <a href=\"/evenements\">evenement | </a>
+            <a href=\"/concours\">concours | </a>
+            <a href=\"/etudes_superieures\">écoles supérieures</a>
+
+            <!-- FIN AELH -->
 
             <!-- Main Navigation -->
             <ul class=\"nav navbar-nav ml-auto d-none d-sm-flex\">
